@@ -1,0 +1,42 @@
+.taskItem
+	display: flex
+	justify-content: space-between
+	align-items: center
+	margin-bottom: 10px
+	&.completed
+		text-decoration: line-through
+		color: #b2b0b0
+	&.important
+		font-weight: bold
+		color: #ec5c2b
+.checkbox
+	display: flex
+	align-items: center
+	cursor: pointer
+.checkboxInput
+	display: none
+.checkboxLabel
+	position: relative
+	padding-left: 20px
+	&:before
+		content: "✓"
+		display: flex
+		align-items: center
+		justify-content: center
+		position: absolute
+		left: 0
+		top: 50%
+		transform: translateY(-50%)
+		width: 12px
+		height: 12px
+		border: 1px solid #b2b0b0
+		color: transparent
+		background-color: transparent
+		transition: color .3s ease-in-out, width .3s ease-in-out, height .3s ease-in-out
+
+.checkboxInput:checked + .checkboxLabel:before
+	color: #b2b0b0
+
+.checkbox:hover .checkboxLabel:before
+	width: 15px
+	height: 15px
